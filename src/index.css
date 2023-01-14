@@ -1,0 +1,17 @@
+@tailwind base;
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  input {
+    font-family: "Rubik", sans-serif;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
