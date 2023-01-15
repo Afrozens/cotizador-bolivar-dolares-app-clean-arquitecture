@@ -1,15 +1,20 @@
-import CalculatorSection from "./components/CalculatorSection"
-import Header from "./components/Header"
-import Main from "./components/Main"
+import CalculatorSection from "./components/CalculatorSection";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Preloader from "./components/Preloader";
+import { DataProvider } from "./contexts/DataContext";
 
 const App = () => {
   return (
-    <>
-    <Header />
-    <Main />
-    <CalculatorSection />
-    </>
-  )
-}
+    <div>
+      <DataProvider>
+        <Preloader />
+        <Header />
+        <Main />
+        <CalculatorSection />
+      </DataProvider>
+    </div>
+  );
+};
 
-export default App
+export default App;
