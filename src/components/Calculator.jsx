@@ -1,46 +1,28 @@
-import iconCalculator from "../assets/icons/icon-calculator.svg";
 import CalculatorBtn from "./CalculatorBtn";
 
 const Calculator = () => {
   return (
     <div className="h-3/5 w-4/5 mx-auto my-0 flex flex-col items-center">
       <div className="w-4/5 sm:w-80 mx-auto mb-8">
-        <label
-          htmlFor="from"
-          className="block mb-2 text-sm font-medium text-gray-900 uppercase"
-        >
+        <label htmlFor="from" className="calculator-label">
           de:
         </label>
-        <select
-          name=""
-          id=""
-          className="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:border-[#C2CD4B] focus:bg-white outline-[#C2CD4B] block w-full mb-6 p-2.5"
-        >
+        <select name="" id="" className="calculator-select">
           <option value="">---</option>
           <option value=""></option>
           <option value=""></option>
           <option value=""></option>
         </select>
-        <label
-          htmlFor="to"
-          className="block mb-2 text-sm font-medium text-gray-900 uppercase"
-        >
+        <label htmlFor="to" className="calculator-label">
           a:
         </label>
-        <select
-          name=""
-          id=""
-          className="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:border-[#C2CD4B] focus:bg-white outline-[#C2CD4B] block w-full mb-6 p-2.5"
-        >
+        <select name="" id="" className="calculator-select">
           <option value="">---</option>
           <option value=""></option>
           <option value=""></option>
           <option value=""></option>
         </select>
-        <label
-          htmlFor="amount"
-          className="block mb-2 text-sm font-medium text-gray-900 uppercase"
-        >
+        <label htmlFor="amount" className="calculator-label">
           importe:
         </label>
         <div className="relative mb-6">
@@ -49,7 +31,7 @@ const Calculator = () => {
           </div>
           <input
             type="text"
-            className="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:border-[#C2CD4B] focus:bg-white outline-[#C2CD4B] block w-full pl-12 p-2.5 "
+            className="calculator-input"
             placeholder="Cantidad"
           />
         </div>

@@ -28,10 +28,10 @@ const Navbar = () => {
   {isMenuOpen && <NavbarMobile setIsMenuOpen={setIsMenuOpen} date={date}/>}
       <nav className="hidden lg:block">
         <ul className="flex gap-8 text-lg font-bold">
-          <li className="cursor-pointer decoration-4 decoration-[#84BA63] hover:underline">
+          <li className="nav-li">
             Calcular
           </li>
-          <li className="cursor-pointer decoration-4 decoration-[#84BA63] hover:underline">
+          <li className="nav-li">
             Contacto
           </li>
           <li className="text-xl text-[#84BA63]">{date}</li>
