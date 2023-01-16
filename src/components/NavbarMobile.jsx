@@ -1,6 +1,6 @@
 import iconCross from "../assets/icons/icon-cross.svg"
 
-const NavbarMobile = ({isMenuOpen, setIsMenuOpen}) => {
+const NavbarMobile = ({setIsMenuOpen, date}) => {
   return (
     <>
       <button onClick={() => {setIsMenuOpen(false)}}>
@@ -18,7 +18,7 @@ const NavbarMobile = ({isMenuOpen, setIsMenuOpen}) => {
           <li className="cursor-pointer decoration-4 decoration-[#84BA63] hover:underline">
             Contacto
           </li>
-          <li className="ml-4 text-xl self-start text-[#84BA63]">Enero 15, 2023</li>
+          <li className="ml-4 text-xl self-start text-[#84BA63]">{date}</li>
         </ul>
       </nav>
     </>

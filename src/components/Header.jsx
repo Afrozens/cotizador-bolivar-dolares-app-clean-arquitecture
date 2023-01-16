@@ -1,9 +1,7 @@
-
 import Navbar from "./Navbar";
 import iconCalculator from "../assets/icons/icon-calculator.svg";
 
 const Header = () => {
-  
   return (
     <header className="h-16 w-full fixed top-0 left-0 flex justify-start items-center p-4 bg-white shadow-lg z-40">
       <a href="#">
@@ -17,7 +15,6 @@ const Header = () => {
         Cotiza Bs a $
       </h3>
       <Navbar />
-      
     </header>
   );
 };

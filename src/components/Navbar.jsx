@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import DataContext from "../contexts/DataContext";
 import iconHamburguer from "../assets/icons/icon-hamburguer.svg";
 import NavbarMobile from "./NavbarMobile";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [date, setDate] = useState("")
+
+  const {dataApi} = useContext(DataContext)
+
+  useEffect(() => {
+    if (dataApi) {
+      const {_timestamp} = dataApi
+      setDate(_timestamp.fecha_corta2)
+    }
+  }, [dataApi])
 
   return (
     <>
@@ -14,7 +25,7 @@ const Navbar = () => {
       className="h-10 w-10"
     />
   </button>
-  {isMenuOpen && <NavbarMobile isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>}
+  {isMenuOpen && <NavbarMobile setIsMenuOpen={setIsMenuOpen} date={date}/>}
       <nav className="hidden lg:block">
         <ul className="flex gap-8 text-lg font-bold">
           <li className="cursor-pointer decoration-4 decoration-[#84BA63] hover:underline">
@@ -23,7 +34,7 @@ const Navbar = () => {
           <li className="cursor-pointer decoration-4 decoration-[#84BA63] hover:underline">
             Contacto
           </li>
-          <li className="text-xl text-[#84BA63]">Enero 15, 2023</li>
+          <li className="text-xl text-[#84BA63]">{date}</li>
         </ul>
       </nav>
     </>
