@@ -34,11 +34,11 @@
   }
 
   .card-container {
-    @apply h-5/6 lg:h-4/6 w-5/6 mx-auto mt-0 mb-8 p-2 lg:pt-16 absolute top-2/4 left-2/4 translate-y-[-30%] md:translate-y-[-25%] lg:translate-y-[-20%] translate-x-[-50%] flex flex-col justify-between items-center lg:flex-row bg-white rounded-md shadow-lg overflow-y-auto lg:overflow-y-hidden;
+    @apply h-[700px] lg:h-4/6 w-5/6 mx-auto mt-4 mb-8 lg:pt-8 absolute top-2/4 left-2/4 translate-y-[-20%] md:translate-y-[-25%] lg:translate-y-[-20%] translate-x-[-50%] flex flex-col justify-evenly  lg:justify-between lg:items-center lg:flex-row bg-white rounded-md shadow-lg;
   }
 
   .card-structure {
-    @apply w-64 sm:w-96 mx-auto mt-2 mb-12 my-0 px-8 pt-4 pb-8 rounded-xl border border-b-4 border-gray-600 shadow-md bg-white;
+    @apply w-64 sm:w-96 mx-auto mt-2 mb-8 my-0 px-8 pt-4 pb-8 rounded-xl border border-b-4 border-gray-600 shadow-md bg-white;
   }
 
   .card-ribbon-front {

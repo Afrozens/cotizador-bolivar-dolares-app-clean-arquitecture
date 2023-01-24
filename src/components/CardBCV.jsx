@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import DataContext from "../contexts/DataContext";
+import { motion } from "framer-motion";
 import iconUpdate from "../assets/icons/icon-update.svg";
 import iconDate from "../assets/icons/icon-date.svg";
 import iconTime from "../assets/icons/icon-time.svg";
@@ -14,7 +15,7 @@ const initialValue = {
 
 const CardBCV = () => {
   const [values, setValues] = useState(initialValue);
-  const { dataApi } = useContext(DataContext);
+  const { dataApi, loading } = useContext(DataContext);
 
   useEffect(() => {
     if (dataApi) {
@@ -37,17 +38,28 @@ const CardBCV = () => {
         </h2>
         <img src={logoBCV} className="h-12 sm:h-16 w-12 sm:w-16 mb-4" />{" "}
       </div>
-      <div className="card-ribbon-front">
-        <p className="card-price">{values.price}</p>
+      <div className="card-ribbon-front left-4 sm:left-0">
+        <motion.p
+          initial={{ scaleY: 0.5, color: "#fde047" }}
+          animate={loading && { scaleY: 1, color: "#000" }}
+          transition={{ duration: 1 }}
+          className="card-price"
+        >
+          {values.price}
+        </motion.p>
         <div className="card-ribbon-back right-0 border-r-[13px]"></div>
       </div>
       <div className="mt-4">
         <ul className="p-0 text-xs">
           <li className="card-subtitle">
-            <img
+            <motion.img
+              initial={{ rotate: 15 }}
+              animate={loading && { rotate: 359 }}
+              whileTap={{ rotate: 359 }}
+              transition={{ duration: 4 }}
               src={iconUpdate}
               alt="icono actualizando"
-              className="w-[.9rem] sm:w-6"
+              className="w-[.9rem] sm:w-6 cursor-pointer"
             />
             <span className="sm:text-lg">
               <b>Ultima actualizacion:</b>
@@ -60,7 +72,14 @@ const CardBCV = () => {
               className="w-[.9rem] sm:w-6"
             />
             <span className="sm:text-lg">
-              Dia: <b>{values.day}</b>
+              Dia:{" "}
+              <motion.b
+                initial={{ color: "#fff" }}
+                animate={loading && { color: "#4B5563" }}
+                transition={{delay: 0.5, duration: 2 }}
+              >
+                {values.day}
+              </motion.b>
             </span>
           </li>
           <li className="card-subtitle">
@@ -70,7 +89,15 @@ const CardBCV = () => {
               className="w-[.9rem] sm:w-6"
             />
             <span className="sm:text-lg">
-              Hora: <b className="text-[9px] sm:text-lg">{values.hour}</b>
+              Hora:{" "}
+              <motion.b
+                initial={{ color: "#fff" }}
+                animate={loading && { color: "#4B5563" }}
+                transition={{delay: 0.5, duration: 2 }}
+                className="text-[9px] sm:text-lg"
+              >
+                {values.hour}
+              </motion.b>
             </span>
           </li>
         </ul>
@@ -79,15 +106,15 @@ const CardBCV = () => {
         <a
           href="https://www.bcv.org.ve/"
           target="_blank"
-          className="font-medium text-lg"
+          className="font-medium text-lg flex"
         >
           Ver mas
+          <img
+            src={iconArrow}
+            alt="icono flecha"
+            className="w-6 h-6 ml-2 hover:translate-x-1 transition-transform"
+          />
         </a>
-        <img
-          src={iconArrow}
-          alt="icono flecha"
-          className="w-6 h-6 ml-2 hover:translate-x-1 transition-transform"
-        />
       </button>
     </div>
   );

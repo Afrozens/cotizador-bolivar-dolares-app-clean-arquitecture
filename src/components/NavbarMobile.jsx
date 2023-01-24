@@ -1,6 +1,12 @@
+import { motion } from "framer-motion"
 import iconCross from "../assets/icons/icon-cross.svg"
 
-const NavbarMobile = ({setIsMenuOpen, date}) => {
+const variants = {
+  open: { opacity: 1, height: "192px" },
+  closed: { opacity: 0, height: "50px" },
+}
+
+const NavbarMobile = ({isMenuOpen, setIsMenuOpen, date}) => {
   return (
     <>
       <button onClick={() => {setIsMenuOpen(false)}}>
@@ -11,15 +17,33 @@ const NavbarMobile = ({setIsMenuOpen, date}) => {
     />
   </button>
       <nav className="min-h-screen w-full top-16 left-0 z-20 fixed bg-[#000000c0]">
-        <ul className="h-48 w-full flex flex-col items-center fixed top-16 left-0 bg-white rounded-b-lg shadow-lg z-40 gap-8 text-2xl font-bold">
-          <li className="nav-li">
+        <motion.ul 
+        layout
+        initial={{height: "50px"}}
+        animate={isMenuOpen ? "open" : "closed"}
+        variants={variants}
+        transition={{duration: 0.5}}
+        className="h-48 w-full flex flex-col justify-evenly items-center fixed top-16 left-0 bg-white rounded-b-lg shadow-lg z-40 gap-8 text-2xl font-bold">
+          <motion.li
+          initial={{color: "#fff", opacity: 0}}
+          animate={{color: "#000", opacity: 1}}
+          transition={{duration: 0.9}}
+           className="nav-li mt-4">
             Calcular
-          </li>
-          <li className="nav-li">
+          </motion.li>
+          <motion.li
+          initial={{color: "#fff", opacity: 0}}
+          animate={{color: "#000", opacity: 1}}
+          transition={{duration: 0.9}}
+           className="nav-li">
             Contacto
-          </li>
-          <li className="ml-4 text-xl self-start text-[#84BA63]">{date}</li>
-        </ul>
+          </motion.li>
+          <motion.li 
+          initial={{color: "#ffffff0", opacity: 0}}
+          animate={{color: "#84BA63", opacity: 1}}
+          transition={{duration: 0.8}}
+          className="ml-4 text-xl self-start">{date}</motion.li>
+        </motion.ul>
       </nav>
     </>
   )
