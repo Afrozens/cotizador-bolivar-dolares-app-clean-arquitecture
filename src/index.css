@@ -34,7 +34,7 @@
   }
 
   .card-container {
-    @apply h-[700px] lg:h-4/6 w-5/6 mx-auto mt-4 mb-8 lg:pt-8 absolute top-2/4 left-2/4 translate-y-[-20%] md:translate-y-[-25%] lg:translate-y-[-20%] translate-x-[-50%] flex flex-col justify-evenly  lg:justify-between lg:items-center lg:flex-row bg-white rounded-md shadow-lg;
+    @apply h-[700px] sm:h-5/6 lg:h-4/6 w-5/6 mx-auto mt-4 mb-8 lg:pt-8 absolute top-2/4 left-2/4 translate-y-[-20%] md:translate-y-[-25%] lg:translate-y-[-20%] translate-x-[-50%] flex flex-col justify-evenly  lg:justify-between lg:items-center lg:flex-row bg-white rounded-md shadow-lg;
   }
 
   .card-structure {

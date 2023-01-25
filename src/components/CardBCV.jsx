@@ -45,7 +45,7 @@ const CardBCV = () => {
           transition={{ duration: 1 }}
           className="card-price"
         >
-          {values.price}
+          {values.price && (values.price).toFixed(2)}
         </motion.p>
         <div className="card-ribbon-back right-0 border-r-[13px]"></div>
       </div>
@@ -54,9 +54,9 @@ const CardBCV = () => {
           <li className="card-subtitle">
             <motion.img
               initial={{ rotate: 15 }}
-              animate={loading && { rotate: 359 }}
-              whileTap={{ rotate: 359 }}
-              transition={{ duration: 4 }}
+              animate={loading && { rotate: 360 }}
+              whileTap={{ rotate: 360 }}
+              transition={{ duration: 5 }}
               src={iconUpdate}
               alt="icono actualizando"
               className="w-[.9rem] sm:w-6 cursor-pointer"

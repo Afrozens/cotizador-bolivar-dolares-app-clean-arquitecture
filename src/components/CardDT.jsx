@@ -44,7 +44,7 @@ const CardDT = () => {
         initial={{scaleY: 0.5, color: "#fde047"}}
         animate={loading && {scaleY: 1, color: "#000"}}
         transition={{duration: 1}}
-        className="card-price justify-end">{values.price}</motion.p>
+        className="card-price justify-end">{values.price && (values.price).toFixed(2)}</motion.p>
         <div className="card-ribbon-back left-0 border-l-[13px]"></div>
       </div>
       <div className="mt-4">
@@ -52,9 +52,9 @@ const CardDT = () => {
           <li className="card-subtitle">
             <motion.img
               initial={{ rotate: 15 }}
-              animate={loading && { rotate: 359 }}
-              whileTap={{ rotate: 359 }}
-              transition={{ duration: 4 }}
+              animate={loading && { rotate: 360 }}
+              whileTap={{ rotate: 360 }}
+              transition={{ duration: 5 }}
               src={iconUpdate}
               alt="icono actualizando"
               className="w-[.9rem] sm:w-6 cursor-pointer  "
