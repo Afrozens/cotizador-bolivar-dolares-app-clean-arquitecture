@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+  html {
+    @apply scroll-smooth
+  }
+
   h1,
   h2,
   h3,
@@ -24,6 +28,10 @@
   .preloader {
     @apply h-2 w-20 relative bg-lime-500 rounded-lg animate-moverSides before:content-[''] before:absolute before:h-2 before:rounded-lg before:left-6 before:bg-yellow-500 before:top-[20px] before:w-12 before:animate-moverSides after:content-[''] after:absolute after:h-2 after:rounded-lg after:left-6 after:bg-lime-600 after:top-[-20px] after:w-16 after:animate-moverSides;
   }
+
+  /* .preloader-error {
+    @apply h-2 w-20 relative bg-red-500 rounded-lg -rotate-45 after:content-[''] after:absolute after:h-2 after:rounded-lg after:left-2 after:bg-red-600 after:top-[2px] after:w-16 after:-rotate-90;
+  } */
 
   .header-main {
     @apply h-16 w-full fixed top-0 left-0 flex justify-start items-center p-4 bg-white shadow-lg z-40;

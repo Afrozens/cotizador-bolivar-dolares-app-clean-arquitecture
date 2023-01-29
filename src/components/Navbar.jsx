@@ -29,10 +29,10 @@ const Navbar = () => {
       <nav className="hidden lg:block">
         <ul className="flex gap-8 text-lg font-bold">
           <li className="nav-li">
-            Calcular
+            <a href="#calculadora">Calcular</a>
           </li>
           <li className="nav-li">
-            Contacto
+            <a target="_blank" href="https://github.com/Afrozens">Contacto</a> 
           </li>
           <li className="text-xl text-[#84BA63]">{date}</li>
         </ul>

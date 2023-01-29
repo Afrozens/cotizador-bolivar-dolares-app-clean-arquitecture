@@ -104,15 +104,16 @@ const CardDT = () => {
         <a
           href="https://dolartoday.com/"
           target="_blank"
-          className="font-medium text-lg"
+          className="font-medium text-lg flex"
         >
           Ver mas
-        </a>
+        
         <img
           src={iconArrow}
           alt="icono flecha"
           className="w-6 h-6 ml-2 hover:translate-x-1 transition-transform"
         />
+        </a>
       </button>
     </div>
   );

@@ -19,6 +19,7 @@ export const useFetch = (url) => {
           let err = new Error("Error en la peticion Fetch");
           err.status = res.status || "00";
           err.statusText = res.statusText || "Ocurrio un error";
+          
           throw err;
         }
 
@@ -32,10 +33,12 @@ export const useFetch = (url) => {
         if (!signal.aborted) {
           setData(null);
           setError(error);
+          
         }
       } finally {
         if (!signal.aborted) {
           setLoading(false);
+          console.log(error)
         }
       }
     };

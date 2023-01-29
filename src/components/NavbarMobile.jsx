@@ -29,14 +29,14 @@ const NavbarMobile = ({isMenuOpen, setIsMenuOpen, date}) => {
           animate={{color: "#000", opacity: 1}}
           transition={{duration: 0.7}}
            className="nav-li mt-4">
-            Calcular
+            <a onClick={() => {setIsMenuOpen(false)}} href="#calculadora">Calcular</a>
           </motion.li>
           <motion.li
           initial={{color: "#fff", opacity: 0}}
           animate={{color: "#000", opacity: 1}}
           transition={{duration: 0.7}}
            className="nav-li">
-            Contacto
+            <a onClick={() => {setIsMenuOpen(false)}} target="_blank" href="https://github.com/Afrozens">Contacto</a> 
           </motion.li>
           <motion.li 
           initial={{color: "#ffffff0", opacity: 0}}

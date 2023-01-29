@@ -3,8 +3,7 @@ import DataContext from "../contexts/DataContext";
 
 const Preloader = () => {
   const [isReceived, setIsReceived] = useState(false);
-  const { dataApi } = useContext(DataContext);
-
+  const { dataApi, error } = useContext(DataContext);
   useEffect(() => {
     if (dataApi) {
       setIsReceived(true)
