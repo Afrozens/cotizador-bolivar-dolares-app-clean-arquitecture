@@ -4,6 +4,10 @@
   html {
     @apply scroll-smooth
   }
+  
+  body {
+    @apply min-h-screen w-full
+  }
 
   h1,
   h2,
