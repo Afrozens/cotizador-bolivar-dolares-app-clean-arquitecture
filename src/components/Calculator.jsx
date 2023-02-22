@@ -1,27 +1,19 @@
 import { motion } from "framer-motion";
-import { useContext, useEffect, useState } from "react";
-import DataContext from "../contexts/DataContext";
+import {  useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import { getPrices } from "../data/dolarTodayGets";
 import BtnCopy from "./BtnCopy";
 
 const Calculator = () => {
   const [priceSelect, setPriceSelect] = useState("");
-  const [coinsDollars, setCoinsDollars] = useState({});
   const [coinReference, setCoinReference] = useState("");
   const [priceUSD, setPriceUSD] = useState("");
   const [priceVES, setPriceVES] = useState("");
 
-  const { dataApi } = useContext(DataContext);
-
-  useEffect(() => {
-    if (dataApi) {
-      const { USD } = dataApi;
-      setCoinsDollars({
-        dolarToday: USD.dolartoday,
-        dolarBCV: USD.sicad2,
-      });
-    }
-  }, [dataApi]);
-
+  const { data: coinsDollars } = useQuery({
+    queryKey: ["coinsDollars"],
+    queryFn: getPrices,
+  });
   useEffect(() => {
     if (priceSelect === "DT") {
       setPriceVES(coinsDollars.dolarToday);
@@ -97,7 +89,6 @@ const Calculator = () => {
           />
           <BtnCopy stateCopy={priceVES} />
         </div>
-        
       </div>
     </motion.div>
   );

@@ -1,22 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import DataContext from "../contexts/DataContext";
+import { useState } from "react";
 import iconHamburguer from "../assets/icons/icon-hamburguer.svg";
 import NavbarMobile from "./NavbarMobile";
 import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
+import { getDate } from "../data/dolarTodayGets";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [date, setDate] = useState("");
 
-  const { dataApi } = useContext(DataContext);
-
-  useEffect(() => {
-    if (dataApi) {
-      const { _timestamp } = dataApi;
-      setDate(_timestamp.fecha_corta2);
-    }
-  }, [dataApi]);
-
+  const { data: date } = useQuery({ queryKey: ["date"], queryFn: getDate });
   return (
     <>
       <button

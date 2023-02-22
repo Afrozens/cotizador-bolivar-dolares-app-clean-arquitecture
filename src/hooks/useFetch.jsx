@@ -3,15 +3,12 @@ import React, { useState, useEffect } from "react";
 export const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const abortController = new AbortController();
     const signal = abortController.signal;
 
     const fetchData = async () => {
-      setLoading(true);
-
       try {
         const res = await fetch(url);
 
@@ -37,7 +34,6 @@ export const useFetch = (url) => {
         }
       } finally {
         if (!signal.aborted) {
-          setLoading(false);
           console.log(error)
         }
       }
@@ -49,5 +45,5 @@ export const useFetch = (url) => {
     return () => abortController.abort();
   }, [url]);
 
-  return { data, error, loading };
+  return { data, error};
 };

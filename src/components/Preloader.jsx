@@ -1,18 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import DataContext from "../contexts/DataContext";
+import { useQuery } from "react-query";
+import { getData } from "../data/dolarTodayGets";
 
 const Preloader = () => {
-  const [isReceived, setIsReceived] = useState(false);
-  const { dataApi, error } = useContext(DataContext);
-  useEffect(() => {
-    if (dataApi) {
-      setIsReceived(true)
-    }
-  }, [dataApi]);
-
+  const { isLoading, isError, error } = useQuery({
+    queryKey: ["data"],
+    queryFn: getData,
+  });
   return (
-    <div className={`preloader-font ${isReceived && "opacity-0 hidden"}`}>
-      <div className="preloader"></div>
+    <div className={`preloader-font ${!isLoading && "opacity-0 hidden"}`}>
+      <div className={isError ? "preloader-error" : "preloader"}>{isError && error}</div>
     </div>
   );
 };

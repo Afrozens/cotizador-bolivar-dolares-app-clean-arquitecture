@@ -1,5 +1,5 @@
 import CardBCV from "./CardBCV";
-import CardDT  from "./CardDT"
+import CardDT from "./CardDT";
 
 const CardContainer = () => {
   return (
