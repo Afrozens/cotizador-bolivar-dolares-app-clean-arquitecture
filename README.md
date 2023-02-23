@@ -15,7 +15,7 @@ https://s3.amazonaws.com/dolartoday/data.json
 - Improve interface and validations (**NO-CHECKED**)
 ---
 ## Deploy app: 
-[Exchange Dolar Bolivar](https://cotizador-dolar-bolivar.netlify.app/)
+[Exchange Dolar Bolivar](https://cotizador-bolivar-dolares-app.vercel.app/)
 ## Screenshot:
 #### Desktop:
 ![main exchange](https://i.imgur.com/rIubSAt.png)
