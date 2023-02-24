@@ -3,6 +3,8 @@
 Simple responsive web application that through an API (DolarToday) we show on screen in real time the quotation of the USD/VES pair either the dollar backed by the government (BCV) or the international dollar price. (DolarToday)
 ### Technologies:
 - React
+- React Router Dom
+- React Query
 - React Copy to Clipboard
 - React Hot Toast
 - Framer Motion
@@ -12,7 +14,7 @@ Simple responsive web application that through an API (DolarToday) we show on sc
 https://s3.amazonaws.com/dolartoday/data.json
 ### Implement in the future:
 - Implementing Euro currency in the Quote (**NO-CHECKED**).
-- Improve interface and validations (**NO-CHECKED**)
+- Improve interface and validations (**CHECKED**)
 ---
 ## Deploy app: 
 [Exchange Dolar Bolivar](https://cotizador-bolivar-dolares-app.vercel.app/)
