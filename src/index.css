@@ -1,8 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
-@layer { 
-    @apply font-signika bg-third min-h-screen w-full
+@layer base {
+  body {
+    @apply font-signika bg-third min-h-screen w-full scroll-smooth; 
+  }
 }
 @tailwind components;
+@layer components {
+  .card-structure {
+    @apply w-64 md:w-80 lg:w-96 mx-auto mt-6 mb-8 my-0 px-8 pt-4 pb-8 rounded-xl border border-b-4 border-gray-600 shadow-md bg-white;
+  }
+
+  .card-ribbon-front {
+    @apply w-56 md:w-[19.5rem] lg:w-[23.3rem] relative ml-[-0.65rem] py-1 px-4 rounded-t-md rounded-b-md bg-yellow-300;
+  }
+
+  .card-ribbon-back {
+    @apply h-0 w-0 absolute bottom-[-20px] border-t-[13px] border-t-green-500 border-b-[10px] z-[-6];
+  }
+
+  .card-price {
+    @apply m-0 pt-2 flex text-3xl font-medium before:content-['VES'] before:mr-1 before:font-light before:text-[14px] sm:before:text-[18px]  after:content-['/_1$'] after:ml-1 after:font-light after:text-[14px] sm:after:text-[18px];
+  }
+
+  .card-subtitle {
+    @apply text-gray-600 mb-1 flex text-center gap-2;
+  }
+
+  .card-btn {
+    @apply flex justify-center items-center text-center mt-6 py-1 sm:py-2 px-4 sm:px-6 font-bold bg-[#84BA63] border border-b-transparent rounded-full transition-all hover:bg-[#C2CD4B] active:scale-95 hover:scale-110;
+  }
+}
 @tailwind utilities;
