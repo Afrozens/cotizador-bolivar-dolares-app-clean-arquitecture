@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <>
       <main className="min-h-screen w-full bg-inherit p-10 mt-16 flex flex-col items-center md:py-24">
-        <section className="flex flex-col items-center md:flex-row md:gap-8 md:mb-6">
+        <section className="flex flex-col items-center md:flex-row md:gap-8 md:mb-6 lg:gap-14">
           <img
             src={Points}
             alt="more points green image"
