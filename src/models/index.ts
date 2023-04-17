@@ -1,3 +1,3 @@
 export * from './LabelsType';
-export * from './coinType';
-export * from './timeType';
+export * from './CoinType';
+export * from './TimeType';

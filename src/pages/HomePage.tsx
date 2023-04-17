@@ -1,18 +1,22 @@
-import ImageLanding from "@/assets/ImageLanding.png"
-import Arch from "@/assets/Arch.svg"
-import RectangleGradient from "@/assets/RectangleGradient.svg"
-import Points from "@/assets/Points.svg"
+import ImageLanding from '@/assets/ImageLanding.png'
+import Arch from '@/assets/Arch.svg'
+import RectangleGradient from '@/assets/RectangleGradient.svg'
+import Points from '@/assets/Points.svg'
 import RectangleShort from '@/assets/RectangleShort.svg'
-import Square from "@/assets/Square.svg"
-import iconCalculator from "@/assets/icons/IconCalculator.svg"
+import Square from '@/assets/Square.svg'
+import iconCalculator from '@/assets/icons/IconCalculator.svg'
 import iconNewspaper from '@/assets/icons/IconNewspaper.svg'
-import iconPresentation from '@/assets/icons/IconPresentation.svg'
+import iconPresentation from '@/assets/icons/IconPresentation.svg' 
 import { Card } from '@/components'
+import { useSelector } from 'react-redux'
+import { AppStore } from '@/app/store'
 
 const HomePage = () => {
+  const coins = useSelector((state: AppStore) => state.today)
+
   return (
     <>
-      <main className="min-h-screen w-full bg-inherit p-10 mt-16 flex flex-col items-center md:py-24">
+      <main className="min-h-screen w-full bg-inherit p-10 overflow-y-hidden mt-16 flex flex-col items-center md:py-24 ">
         <section className="flex flex-col items-center md:flex-row md:gap-8 md:mb-6 lg:gap-14">
           <img
             src={Points}
@@ -56,8 +60,9 @@ const HomePage = () => {
             en tiempo real.
           </h2>
           <div className="md:flex justify-center items-center md:gap-4 w-full mx-auto lg:gap-0">
-            <Card />
-            <Card />
+            {coins.map((coin, i) => (
+              <Card coin={coin} key={i}/>
+            ))}
           </div>
           <img
             src={Square}

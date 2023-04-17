@@ -4,7 +4,7 @@ export interface Time {
   epoch: string | number
 }
 
-export const timeEmpty: Partial<Time> = {
+export const timeEmptyState: Time = {
   day: '',
   dateShort: '',
   epoch: '',

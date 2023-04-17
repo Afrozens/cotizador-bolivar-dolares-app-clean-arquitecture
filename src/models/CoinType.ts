@@ -30,6 +30,7 @@ interface UsdUrl {
   localbitcoin_ref: string
   dolartoday: string
 }
+
 export interface ApiDolarToday {
   _labels: _labelsUrl
   _timestamp: _timestampUrl
@@ -37,11 +38,18 @@ export interface ApiDolarToday {
 }
 
 export interface Coin {
-    name: string
-    price: number
+  name: string,
+  price: number,
+  image?: HTMLImageElement
 }
 
-export const coinEmptyState: Coin = {
-    name: "",
-    price: 0.00
-}
+export const coinsEmptyState: Coin[] = [
+  {
+    name: '',
+    price: 0.0,
+  },
+  {
+    name: '',
+    price: 0.0,
+  },
+]

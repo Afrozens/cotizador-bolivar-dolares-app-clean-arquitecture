@@ -3,21 +3,33 @@ import iconDate from '@/assets/icons/IconDate.svg'
 import iconTime from '@/assets/icons/IconTime.svg'
 import iconArrow from '@/assets/icons/IconArrow.svg'
 import LogoBCV from "@/assets/LogoBCV.jpg"
+import LogoToday from "@/assets/LogoDT.jpg"
+import { Coin, Time } from '@/models'
+import { useSelector } from 'react-redux'
+import { AppStore } from '@/app/store'
+import {formatTime} from "@/utilities"
 
-const Card = () => {
+type PropsType = {
+  coin: Coin
+}
+
+const Card = ({coin}: PropsType) => {
+  const {day, epoch} = useSelector((state: AppStore) => state.time)
+  const {name, price} = coin
+  const hour = formatTime(Number(epoch))
   return (
     <div className="card-structure">
       <div className="flex justify-between items-center">
         <h2 className="block mt-[-4px] text-2xl md:text-3xl font-medium">
-          Dolar BCV{' '}
-          <span className="block mt-[-4px] text-gray-400 text-xs md:text-md font-normal">
-            Banco central de Venezuela
+          {name}
+          <span className="block mt-[-4px] text-gray-400 text-sm md:text-base font-normal">
+            {name === "DOLAR BCV" ? "Banco central de Venezuela" : "Compañía anonima dolartoday"}
           </span>
         </h2>
-        <img src={LogoBCV} className="h-12 md:h-16 w-12 md:w-16 mb-4" />{' '}
+        <img src={name === "DOLAR BCV" ? LogoBCV : LogoToday} className="h-12 md:h-16 w-12 md:w-16 mb-4" />{' '}
       </div>
       <div className="card-ribbon-front left-4 md:left-0">
-        <p className="card-price">24</p>
+        <p className="card-price">{price}</p>
         <div className="card-ribbon-back right-0 border-r-[13px]"></div>
       </div>
       <div className="mt-4">
@@ -39,7 +51,7 @@ const Card = () => {
               className="w-[.9rem] md:w-6"
             />
             <span className="md:text-lg">
-              Dia: <b className="text-[9px] md:text-base">""</b>
+              Dia: <b className="text-[9px] md:text-base">{day}</b>
             </span>
           </li>
           <li className="card-subtitle">
@@ -49,8 +61,7 @@ const Card = () => {
               className="w-[.9rem] md:w-6"
             />
             <span className="md:text-lg">
-              Hora:{' '}
-              <b className="text-[9px] md:text-base">""</b>
+              Hora: <b className="text-[9px] md:text-base">{hour}</b>
             </span>
           </li>
         </ul>
