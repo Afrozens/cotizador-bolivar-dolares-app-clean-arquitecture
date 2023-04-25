@@ -2,12 +2,38 @@
 
 @tailwind base;
 @layer base {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
   body {
-    @apply font-signika bg-third min-h-screen w-full scroll-smooth; 
+    @apply font-signika bg-third min-h-screen w-full scroll-smooth;
+  }
+
+  html {
+    @apply scroll-smooth;
   }
 }
+
 @tailwind components;
 @layer components {
+  .preloader-font {
+    @apply min-h-screen w-full fixed top-0 left-0 flex justify-center items-center bg-gray-300 z-50  transition-all;
+  }
+
+  .preloader {
+    @apply h-2 w-20 relative bg-lime-500 rounded-lg animate-moverSides before:content-[''] before:absolute before:h-2 before:rounded-lg before:left-6 before:bg-yellow-500 before:top-[20px] before:w-12 before:animate-moverSides after:content-[''] after:absolute after:h-2 after:rounded-lg after:left-6 after:bg-lime-600 after:top-[-20px] after:w-16 after:animate-moverSides;
+  }
+
+  .preloader-error {
+    @apply h-2 w-20 relative bg-red-500 rounded-lg -rotate-45 after:content-[''] after:absolute after:h-2 after:rounded-lg after:left-2 after:bg-red-600 after:top-[2px] after:w-16 after:-rotate-90;
+  }
+
   .card-structure {
     @apply w-64 md:w-80 lg:w-96 mx-auto mt-6 mb-8 my-0 px-8 pt-4 pb-8 rounded-xl border border-b-4 border-gray-600 shadow-md bg-white;
   }

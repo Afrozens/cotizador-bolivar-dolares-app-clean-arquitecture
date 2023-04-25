@@ -46,17 +46,17 @@ const Header = () => {
         {isOpen && (
           <nav className="w-full h-full px-16 pt-32 fixed top-0 right-0 bg-third flex flex-col gap-4 shadow-md sm:w-96 sm:h-72 sm:absolute sm:right-6 sm:top-16 sm:p-8  z-[50] ">
             <ul
-              className="w-full h-36 flex flex-col gap-12 font-light text-4xl tracking-widest sm:text-3xl sm:gap-4"
+              className="w-full h-36 flex flex-col gap-12 font-light text-3xl tracking-widest sm:gap-4"
               onClick={() => setIsOpen(false)}
             >
               <li className="hover:scale-110 transition">
-                <a href="">Inicio</a>
+                <Link to="/">Inicio</Link>
               </li>
               <li className="hover:scale-110 transition">
-                <a href="">Consulta</a>
+                <Link to="/">Consulta</Link>
               </li>
               <li className="hover:scale-110 transition">
-                <a href="">Calcula</a>
+                <Link to="/calculadora">Calcula</Link>
               </li>
               <li className="hover:scale-110 transition">
                 <a href="">Noticias</a>

@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: '/calculator',
+        path: '/calculadora',
         element: <CalculatorPage />,
       },
     ],

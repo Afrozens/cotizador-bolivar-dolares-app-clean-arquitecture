@@ -35,7 +35,7 @@ const HomePage = () => {
           />
           <div className="flex flex-col md:order-1 h-96 w-3/4">
             <h1 className="text-4xl font-bold md:text-8xl align-start selft-start">
-              <b className="underline decoration-primary decoration-solid decoration-8 underline-offset-[-3px]">
+              <b className="underline decoration-primary decoration-solid decoration-8 underline-offset-1">
                 Cotizador
               </b>{' '}
               de Dolares a Bolivares
@@ -47,14 +47,14 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className="min-h-[60vh]  w-full flex flex-col items-center justify-center relative md:mt-16">
+        <section id='consultar' className="min-h-[60vh]  w-full flex flex-col items-center justify-center relative md:mt-16">
           <img
             src={RectangleShort}
             alt="green rectangle image"
             className="object-cover self-start h-4 w-14"
           />
           <h2 className="text-3xl font-bold my-12 mx-auto md:text-5xl">
-            <b className="underline decoration-primary decoration-solid decoration-8 underline-offset-[-3px]">
+            <b className="underline decoration-primary decoration-solid decoration-8 underline-offset-1">
               Actualizaciones
             </b>{' '}
             en tiempo real.
