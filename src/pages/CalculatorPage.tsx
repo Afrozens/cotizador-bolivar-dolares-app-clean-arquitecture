@@ -3,7 +3,7 @@ import { ButtonCopy } from '@/components'
 import { CoinsTypes } from '@/models'
 import { useState, useEffect, ChangeEvent } from 'react'
 import { useSelector } from 'react-redux'
-
+import { motion } from 'framer-motion'
 const CalculatorPage = () => {
   const [optionUSD, setOptionUSD] = useState<string>('')
   const [priceUSD, setPriceUSD] = useState<number>(0)
@@ -53,7 +53,12 @@ const CalculatorPage = () => {
   }, [priceVES])
 
   return (
-    <section className="h-[70vh] w-full bg-inherit p-10 overflow-y-hidden mt-16 flex flex-col items-center md:py-24">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="h-[70vh] w-full bg-inherit p-10 overflow-y-hidden mt-16 flex flex-col items-center md:py-24"
+    >
       <h2 className="text-4xl font-bold tracking-widest py-4 capitalize underline decoration-primary decoration-solid decoration-4 underline-offset-1 text-center md:text-5xl">
         conversor
       </h2>
@@ -116,7 +121,7 @@ const CalculatorPage = () => {
           <option value={CoinsTypes.DolarBcv}>Dolar BCV</option>
         </select>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

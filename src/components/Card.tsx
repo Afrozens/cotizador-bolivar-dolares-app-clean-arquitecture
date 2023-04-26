@@ -2,40 +2,59 @@ import iconUpdate from '@/assets/icons/IconUpdate.svg'
 import iconDate from '@/assets/icons/IconDate.svg'
 import iconTime from '@/assets/icons/IconTime.svg'
 import iconArrow from '@/assets/icons/IconArrow.svg'
-import LogoBCV from "@/assets/LogoBCV.jpg"
-import LogoToday from "@/assets/LogoDT.jpg"
+import LogoBCV from '@/assets/LogoBCV.jpg'
+import LogoToday from '@/assets/LogoDT.jpg'
 import { Coin, Time } from '@/models'
 import { useSelector } from 'react-redux'
 import { AppStore } from '@/app/store'
-import {formatTime} from "@/utilities"
+import { formatTime } from '@/utilities'
+import { motion } from 'framer-motion'
 
 type PropsType = {
   coin: Coin
 }
 
-const Card = ({coin}: PropsType) => {
-  const {day, epoch} = useSelector((state: AppStore) => state.time)
-  const {name, price} = coin
+const Card = ({ coin }: PropsType) => {
+  const { day, epoch } = useSelector((state: AppStore) => state.time)
+  const { name, price } = coin
   const hour = formatTime(Number(epoch))
+
   return (
     <div className="card-structure">
       <div className="flex justify-between items-center">
         <h2 className="block mt-[-4px] text-2xl md:text-3xl font-medium">
           {name}
           <span className="block mt-[-4px] text-gray-400 text-sm md:text-base font-normal">
-            {name === "DOLAR BCV" ? "Banco central de Venezuela" : "Compañía anonima dolartoday"}
+            {name === 'DOLAR BCV'
+              ? 'Banco central de Venezuela'
+              : 'Compañía anonima dolartoday'}
           </span>
         </h2>
-        <img src={name === "DOLAR BCV" ? LogoBCV : LogoToday} className="h-12 md:h-16 w-12 md:w-16 mb-4" />{' '}
+        <img
+          src={name === 'DOLAR BCV' ? LogoBCV : LogoToday}
+          className="h-12 md:h-16 w-12 md:w-16 mb-4"
+        />{' '}
       </div>
+      
       <div className="card-ribbon-front left-4 md:left-0">
-        <p className="card-price">{price}</p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="card-price"
+        >
+          {price}
+        </motion.p>
         <div className="card-ribbon-back right-0 border-r-[13px]"></div>
       </div>
       <div className="mt-4">
         <ul className="p-0 text-xs">
           <li className="card-subtitle">
-            <img
+            <motion.img
+              initial={{ rotate: 15 }}
+              animate={{ rotate: 180 }}
+              whileInView={{ rotate: 360 }}
+              transition={{ duration: 4 }}
               src={iconUpdate}
               alt="icono actualizando"
               className="w-[.9rem] md:w-6 cursor-pointer"

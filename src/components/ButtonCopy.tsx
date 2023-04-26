@@ -1,6 +1,6 @@
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import toast, { Toaster } from 'react-hot-toast'
-import iconCopy from '@/assets/icons/iconCopy.svg'
+import iconCopy from "../assets/icons/IconCopy.svg"
 type PropTypes = {
   stateCopy: string
 }
